@@ -1,2 +1,22 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+
+// 6 -> да
+// 7 -> да
+// 1 -> нет
+
+string[] week = {"Нет такого дня недели!",      //Ячейка на неправильный ввод
+                "рабочий день((", "рабочий((", "рабочий((", "рабочий((", "рабочий((",   //Чтоб не было необходимости вычитать 1 от введенного числа
+                "выходной!", "выходной, но завтра на работу..."};   // Те самые два выходных
+
+System.Console.Write("Введите номер дня недели: ");
+int weekDay = Convert.ToInt32(Console.ReadLine());
+
+if(weekDay >= 1 && weekDay <=7)
+{
+    System.Console.WriteLine("Введеный день недели " + week[weekDay]);
+}
+else
+{
+    System.Console.WriteLine(week[0]);
+}
+
